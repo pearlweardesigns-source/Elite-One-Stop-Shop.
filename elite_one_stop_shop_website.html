@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Elite One Stop Shop | Phones, Appliances, Printing & Branding</title>
+  <meta name="description" content="Elite One Stop Shop Kampala Uganda – Phones, accessories, home appliances, printing and branding services under one roof." />
+  <style>
+    :root {
+      --primary: #0f172a;
+      --secondary: #f59e0b;
+      --light: #f8fafc;
+      --dark: #020617;
+      --gray: #64748b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 { font-size: 1.5rem; }
+
+    nav a {
+      color: white;
+      margin-left: 1.2rem;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover { color: var(--secondary); }
+
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9') center/cover no-repeat;
+      color: white;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h3 {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      font-size: 2rem;
+      color: var(--primary);
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .card h4 { margin-bottom: .5rem; }
+
+    .price { font-weight: bold; margin: .5rem 0; }
+
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      background: var(--secondary);
+      color: #fff;
+      padding: 10px 16px;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn:hover { background: #d97706; }
+
+    /* CART */
+    #cart {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: #fff;
+      width: 320px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,.15);
+      padding: 1rem;
+      display: none;
+      z-index: 1000;
+    }
+
+    #cart h4 { margin-bottom: 10px; }
+
+    #cart ul { list-style: none; }
+
+    #cart li { font-size: .9rem; margin-bottom: 6px; }
+
+    .cart-toggle {
+      background: var(--secondary);
+      padding: 8px 14px;
+      border-radius: 20px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    footer {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Elite One Stop Shop</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#products">Shop</a>
+    <a href="#contact">Contact</a>
+    <span class="cart-toggle" onclick="toggleCart()">🛒 Cart</span>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Your Trusted One Stop Shop in Kampala</h2>
+  <p>We specialize in phones, accessories, home appliances, printing and branding solutions — quality products and professional services under one roof.</p>
+</section>
+
+<section id="services">
+  <h3>Our Services</h3>
+  <div class="services">
+    <div class="card">
+      <h4>Mobile Phones</h4>
+      <p>Latest smartphones and feature phones from trusted global brands at competitive prices.</p>
+    </div>
+    <div class="card">
+      <h4>Phone Accessories</h4>
+      <p>Chargers, earphones, cases, screen protectors, power banks and more.</p>
+    </div>
+    <div class="card">
+      <h4>Home Appliances</h4>
+      <p>Quality appliances including TVs, fridges, cookers, blenders and electronics.</p>
+    </div>
+    <div class="card">
+      <h4>Printing Services</h4>
+      <p>Professional printing for flyers, posters, business cards, banners and documents.</p>
+    </div>
+    <div class="card">
+      <h4>Branding</h4>
+      <p>Custom branding solutions including T-shirts, mugs, signage, stickers and corporate gifts.</p>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <h3>Online Shop</h3>
+  <div class="services">
+    <div class="card">
+      <h4>Samsung Galaxy A14</h4>
+      <p class="price">UGX 650,000</p>
+      <button class="btn" onclick="addToCart('Samsung Galaxy A14',650000)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <h4>iPhone 12</h4>
+      <p class="price">UGX 1,600,000</p>
+      <button class="btn" onclick="addToCart('iPhone 12',1600000)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <h4>Bluetooth Earbuds</h4>
+      <p class="price">UGX 45,000</p>
+      <button class="btn" onclick="addToCart('Bluetooth Earbuds',45000)">Add to Cart</button>
+    </div>
+
+    <div class="card">
+      <h4>43 Inch Smart TV</h4>
+      <p class="price">UGX 950,000</p>
+      <button class="btn" onclick="addToCart('43 Inch Smart TV',950000)">Add to Cart</button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .buy-btn {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--secondary);
+    color: white;
+    padding: 10px 16px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 0.9rem;
+  }
+
+  .buy-btn:hover {
+    background: #d97706;
+  }
+</style>
+
+<section id="about" class="about">
+  <h3>About Elite One Stop Shop</h3>
+  <p style="max-width:900px;margin:auto;text-align:center;">
+    Elite One Stop Shop is a Kampala-based business committed to delivering reliable products and high-quality services. Our mission is to provide customers with convenience, affordability and professionalism in phones, electronics, appliances, printing and branding solutions.
+  </p>
+</section>
+
+<section id="contact">
+  <h3>Contact Us</h3>
+  <div class="contact">
+    <div class="contact-info">
+      <h4>Location</h4>
+      <p>Kampala, Uganda</p>
+      <h4>Phone</h4>
+      <p>+256 XXX XXX XXX</p>
+      <h4>Email</h4>
+      <p>info@eliteonestopshop.com</p>
+    </div>
+    <div class="contact-info">
+      <h4>Business Hours</h4>
+      <p>Monday – Saturday: 8:00 AM – 7:00 PM</p>
+      <p>Sunday: Closed</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 Elite One Stop Shop | Kampala, Uganda. All Rights Reserved.</p>
+</footer>
+
+<div id="cart">
+  <h4>Your Cart</h4>
+  <ul id="cartItems"></ul>
+  <p><strong>Total: UGX <span id="cartTotal">0</span></strong></p>
+  <button class="btn" onclick="checkout()">Checkout via WhatsApp</button>
+</div>
+
+<script>
+  let cart = [];
+  const deliveryFees = { kampala: 10000, upcountry: 30000 };
+
+  function addToCart(name, price) {
+    cart.push({ name, price });
+    updateCart();
+    alert(name + ' added to cart');
+  }
+
+  function updateCart() {
+    const list = document.getElementById('cartItems');
+    const total = document.getElementById('cartTotal');
+    list.innerHTML = '';
+    let sum = 0;
+
+    cart.forEach(item => {
+      sum += item.price;
+      list.innerHTML += `<li>${item.name} - UGX ${item.price.toLocaleString()}</li>`;
+    });
+
+    total.innerText = sum.toLocaleString();
+  }
+
+  function toggleCart() {
+    const cartBox = document.getElementById('cart');
+    cartBox.style.display = cartBox.style.display === 'block' ? 'none' : 'block';
+  }
+
+  function checkout() {
+    const location = prompt('Delivery location? Type Kampala or Upcountry');
+    let delivery = deliveryFees.kampala;
+
+    if (location && location.toLowerCase().includes('up')) {
+      delivery = deliveryFees.upcountry;
+    }
+
+    let total = delivery;
+    let message = '🧾 Elite One Stop Shop Order%0A%0A';
+
+    cart.forEach(item => {
+      total += item.price;
+      message += `• ${item.name} - UGX ${item.price.toLocaleString()}%0A`;
+    });
+
+    message += `%0ADelivery: UGX ${delivery.toLocaleString()}%0A`;
+    message += `TOTAL: UGX ${total.toLocaleString()}%0A%0A`;
+    message += 'Payment Options:%0A';
+    message += '• MTN MoMo: 0701 555 289%0A';
+    message += '• Airtel Money: 075X XXX XXX%0A';
+    message += '%0APlease confirm order.';
+
+    window.open('https://wa.me/256701555289?text=' + message, '_blank');
+  }
+</script>
+
+<!-- WhatsApp Chat Button -->
+<a href="https://wa.me/256 701 555 289" target="_blank" class="whatsapp-button">Chat on WhatsApp</a>
+
+<style>
+  .whatsapp-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: #fff;
+    padding: 14px 18px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    z-index: 999;
+  }
+
+  .whatsapp-button:hover {
+    background-color: #1ebe5d;
+  }
+</style>
+
+</body>
+</html>
+
